@@ -1,0 +1,13 @@
+<h1>Lista de ToDos</h1>
+<a href="{% url 'todo_create' %}">Crear nuevo</a>
+<ul>
+  {% for todo in todos %}
+    <li>
+      {{ todo.title }} - 
+      {% if todo.is_done %} ✔️ {% else %} ❌ {% endif %}
+      - Usuario ID: {{ todo.user.id }}
+      <a href="{% url 'todo_update' todo.id %}">Editar</a>
+      <a href="{% url 'todo_delete' todo.id %}">Eliminar</a>
+    </li>
+  {% endfor %}
+</ul>

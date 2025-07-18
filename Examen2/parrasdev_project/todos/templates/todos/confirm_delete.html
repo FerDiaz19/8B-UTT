@@ -1,0 +1,6 @@
+<h2>Eliminar</h2>
+<p>¿Estás seguro de eliminar "{{ todo.title }}"?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Sí, eliminar</button>
+</form>
