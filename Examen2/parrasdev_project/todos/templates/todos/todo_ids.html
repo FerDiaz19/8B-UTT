@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📋 Lista de Todos (solo IDs)</h2>
+<ul class="list-group">
+  {% for id in todos %}
+    <li class="list-group-item">🆔 {{ id }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

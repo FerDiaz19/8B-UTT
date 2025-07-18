@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>❌ Todos Pendientes por Usuario</h2>
+<ul class="list-group">
+  {% for todo in todos %}
+    <li class="list-group-item">
+      🆔 {{ todo.id }} - 👤 Usuario ID: {{ todo.user.id }}
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

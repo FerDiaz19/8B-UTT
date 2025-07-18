@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">📋 Lista de Pendientes</h2>
+
+{% if todos %}
+  <ul class="list-group mb-4">
+    {% for todo in todos %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>{{ todo.title }}</strong> - {{ todo.description }}
+          <span class="badge bg-{{ todo.is_done|yesno:'success,danger' }} ms-2">
+            {% if todo.is_done %}Resuelto{% else %}Pendiente{% endif %}
+          </span>
+        </div>
+        <div>
+          <a href="{% url 'todo_update' todo.id %}" class="btn btn-sm btn-primary me-2">Editar</a>
+          <a href="{% url 'todo_delete' todo.id %}" class="btn btn-sm btn-danger">Eliminar</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No hay pendientes registrados.</p>
+{% endif %}
+{% endblock %}

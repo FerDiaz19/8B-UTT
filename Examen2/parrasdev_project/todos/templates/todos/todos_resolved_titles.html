@@ -1,0 +1,7 @@
+<h2>Pendientes resueltos (ID y título)</h2>
+<ul>
+  {% for todo in todos %}
+    <li>ID: {{ todo.id }} - Título: {{ todo.title }}</li>
+  {% endfor %}
+</ul>
+<p>Estos son los pendientes resueltos registrados en el sistema, mostrando su ID y título.</p>

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4">{% if form.instance.pk %}Editar Pendiente{% else %}Crear Pendiente{% endif %}</h2>
+
+<form method="post" class="card p-4 shadow-sm">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-success">Guardar</button>
+  <a href="{% url 'todo_list' %}" class="btn btn-secondary ms-2">Cancelar</a>
+</form>
+{% endblock %}
