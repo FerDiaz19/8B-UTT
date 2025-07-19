@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>📝 Lista de Todos (ID y Título)</h2>
+<h2> Lista de Todos (ID y Título)</h2>
 <ul class="list-group">
   {% for todo in todos %}
     <li class="list-group-item">
-      🆔 {{ todo.id }} - 📝 {{ todo.title }}
+       {{ todo.id }} -  {{ todo.title }}
     </li>
   {% endfor %}
 </ul>
